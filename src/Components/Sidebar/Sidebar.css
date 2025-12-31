@@ -1,0 +1,65 @@
+.sidebar{
+    background: #fff;
+    width: 15%;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.shortcut-links img{
+    width: 20px;
+    margin-right: 20px;
+    
+}
+.side-link {
+    display: flex;
+    align-items: center;   /* vertically center text with icon */
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+
+.sidebar hr{
+    border: 0;
+    height: 2px;
+    background: #ccc;
+    width: 100%;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+.small-sidebar
+{
+    width:53px;
+     transition: all 0.3s ease;
+}
+.subscribed-list h3{
+    font-size: 13px;
+    margin: 20px, 0;
+    color: grey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.subscribed-list img{
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.small-sidebar{
+    width: 5%;
+}
+.small-sidebar p{
+    display: none;
+}
+
+.flex-div{
+    display: flex;
+    align-items: center;
+}
+.menu-icon{
+    width: 2%;
+    height: auto;
+    margin-right: 35px ;
+}

@@ -1,9 +1,58 @@
 import React from 'react'
+import './PlayVideo.css'
+import video from '../../assets/video.mp4'
+import like from '../../assets/like.png'
+import dislike from '../../assets/dislike.png'
+import share from '../../assets/share.png'
+import save from '../../assets/save.png'
+import jack from '../../assets/jack.png'
+import user_profile from '../../assets/user_profile.jpg'
 
 const PlayVideo = () => {
   return (
-    <div>
-      
+    <div className='play-video'>
+        <video src={video} controls autoPlay muted></video>
+        <h3>Best channel to learn webdev</h3>
+        <div className="play-video-info">
+            <p>15555 views &bull; 2days ago</p>
+            <div>
+                <span><img src={like} alt="" /> 125 </span>
+                <span><img src={dislike} alt="" /> 22 </span>
+                <span><img src={share} alt="" /> Share </span>
+                <span><img src={save} alt="" /> Save </span>
+            </div>
+        </div>
+
+        <hr />
+        <div className="publisher">
+            <img src={jack} alt="" />
+            <div>
+                <p>Gauravcode</p>
+                <span>1 subscriber</span>
+            </div>
+            <button>Subscribe</button>
+        </div>
+        <div className='video-description'>
+            <p>This is a sample video about idk</p>
+            <hr />
+            <h4>1 comments</h4>
+            <div className="comment">
+                <img src={user_profile} alt="" />
+                <div>
+                    <h3>Gaurav 
+                        <span> 1 day ago 2026</span>
+                    </h3>
+                    <p>Hope you find a job soon , you wont get a job with this shit</p>
+                    <div className="comment-actions">
+                        
+                        <img src={like} alt="" />
+                        <span>1</span>
+                        <img src={dislike} alt="" />
+                        </div>
+                    </div>
+                </div>
+        </div>
+
     </div>
   )
 }

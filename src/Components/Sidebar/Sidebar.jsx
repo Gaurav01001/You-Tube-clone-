@@ -16,59 +16,49 @@ import megan from '../../assets/megan.png'
 import cameron from '../../assets/cameron.png'
 
 
-const Sidebar = ({sidebar}) => {
+const link = [
+  
+  {img : home, text :"Home"},
+  {img : automobiles, text :"Automobiles"},
+  {img : sports, text :"Sports"},
+  {img : tech, text :"Tech"},
+  {img : entertainment, text :"Entertainment"},
+  {img : game_icon, text :"Gaming"},
+  {img : music, text :"Music"},
+  {img : blogs, text :"Blogs"},
+  {img : news, text :"News"},
+]
+const sub =[
+  {img : jack, text :"Pewdiepie"},
+  {img : simon, text :"Mister-Beast"},
+  {img : tom, text :"Bhuvan-Bam"},
+  {img : megan, text :"Ashish"},
+  {img : cameron, text :"Nas-daily"},
+]
+
+const Sidebar = ({sidebar, category, setCategory}) => {
   return (
     <div className={`sidebar ${!sidebar && "small-sidebar"}`}>
-
       <div className="shortcut-links">
-        <div className="side-link">
-          <img src={home} alt="" /> <p>Home</p>
-        </div>
-        <div className="side-link">
-          <img src={automobiles} alt="" /> <p>Automobiles</p>
-        </div>
-        <div className="side-link">
-          <img src={sports} alt="" /> <p>Sports</p>
-        </div>
-        <div className="side-link">
-          <img src={tech} alt="" /> <p>Tech</p>
-        </div>
-        <div className="side-link">
-          <img src={entertainment} alt="" /> <p>Entertainment</p>
-        </div>
-        <div className="side-link">
-          <img src={game_icon} alt="" /> <p>Gaming</p>
-        </div>
-        <div className="side-link">
-          <img src={music} alt="" /> <p>Music</p>
-        </div>
-        <div className="side-link">
-          <img src={blogs} alt="" /> <p>Blogs</p>
-        </div>
-        <div className="side-link">
-          <img src={news} alt="" /> <p>News</p>
-        </div>
-<hr />
+        {link.map((item, index)=>(
+          <div className="side-link" key={index} onClick={()=>setCategory}>
+            <img src={item.img} alt="" />
+            <p>{item.text}</p>
+          </div>
+        ))}
+        <hr />
       </div>
-      
+
       <div className="subscribed-list">
         <h3>Subscribed</h3>
-        <div className="side-link">
-          <img src={jack} alt="" /> <p>Pewdiepie</p>
-        </div>
-                <div className="side-link">
-          <img src={simon} alt="" /> <p>Mister-Beast</p>
-        </div>
-                <div className="side-link">
-          <img src={tom} alt="" /> <p>Bhuvan-Bam</p>
-        </div>
-                <div className="side-link">
-          <img src={megan} alt="" /> <p>Ashish</p>
-        </div>
-                <div className="side-link">
-          <img src={cameron} alt="" /> <p>Nas-daily</p>
-        </div>
+        {sub.map((item, index) => (
+          <div className="side-link" key={index}>
+            <img src={item.img} alt="" />
+            <p>{item.text}</p>
+          </div>
+        ))}
       </div>
+
     </div>
   )
 }

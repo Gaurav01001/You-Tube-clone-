@@ -1,4 +1,3 @@
-
 import './Sidebar.css'
 import home from '../../assets/home.png'
 import automobiles from '../../assets/automobiles.png'
@@ -15,48 +14,59 @@ import tom from '../../assets/tom.png'
 import megan from '../../assets/megan.png'
 import cameron from '../../assets/cameron.png'
 
-
-const link = [
-  
-  {img : home, text :"Home"},
-  {img : automobiles, text :"Automobiles"},
-  {img : sports, text :"Sports"},
-  {img : tech, text :"Tech"},
-  {img : entertainment, text :"Entertainment"},
-  {img : game_icon, text :"Gaming"},
-  {img : music, text :"Music"},
-  {img : blogs, text :"Blogs"},
-  {img : news, text :"News"},
-]
-const sub =[
-  {img : jack, text :"Pewdiepie"},
-  {img : simon, text :"Mister-Beast"},
-  {img : tom, text :"Bhuvan-Bam"},
-  {img : megan, text :"Ashish"},
-  {img : cameron, text :"Nas-daily"},
-]
-
-const Sidebar = ({sidebar, category, setCategory}) => {
+const Sidebar = ({ sidebar,category, setCategory, setChannel }) => {
   return (
     <div className={`sidebar ${!sidebar && "small-sidebar"}`}>
+
       <div className="shortcut-links">
-        {link.map((item, index)=>(
-          <div className="side-link" key={index} onClick={()=>setCategory}>
-            <img src={item.img} alt="" />
-            <p>{item.text}</p>
-          </div>
-        ))}
+        <div className={`side-link ${category === 0 ? "active" : ""}`} onClick={() => setCategory(0)}>
+          <img src={home} alt="" /> <p>Home</p>
+        </div>
+        <div className={`side-link ${category === 2 ? "active" : ""}`} onClick={() => setCategory(2)}>
+          <img src={automobiles} alt="" /> <p>Automobiles</p>
+        </div>
+        <div className={`side-link ${category === 17 ? "active" : ""}`} onClick={() => setCategory(17)}>
+          <img src={sports} alt="" /> <p>Sports</p>
+        </div>
+        <div className={`side-link ${category === 28 ? "active" : ""}`} onClick={() => setCategory(28)}>
+          <img src={tech} alt="" /> <p>Tech</p>
+        </div>
+        <div className={`side-link ${category === 24 ? "active" : ""}`} onClick={() => setCategory(24)}>
+          <img src={entertainment} alt="" /> <p>Entertainment</p>
+        </div>
+        <div className={`side-link ${category === 20 ? "active" : ""}`} onClick={() => setCategory(20)}>
+          <img src={game_icon} alt="" /> <p>Gaming</p>
+        </div>
+        <div className={`side-link ${category === 10 ? "active" : ""}`} onClick={() => setCategory(10)}>
+          <img src={music} alt="" /> <p>Music</p>
+        </div>
+        <div className={`side-link ${category === 22 ? "active" : ""}`} onClick={() => setCategory(22)}>
+          <img src={blogs} alt="" /> <p>Blogs</p>
+        </div>
+        <div className={`side-link ${category === 25 ? "active" : ""}`} onClick={() => setCategory(25)}>
+          <img src={news} alt="" /> <p>News</p>
+        </div>
         <hr />
       </div>
-
+      
       <div className="subscribed-list">
         <h3>Subscribed</h3>
-        {sub.map((item, index) => (
-          <div className="side-link" key={index}>
-            <img src={item.img} alt="" />
-            <p>{item.text}</p>
-          </div>
-        ))}
+
+        <div className="side-link" onClick={() => setChannel("UC-lHJZR3Gqxm24_Vd_AJ5Yw")}>
+          <img src={jack} alt="" /> <p>PewDiePie</p>
+        </div>
+        <div className="side-link" onClick={() => setChannel("UCX6OQ3DkcsbYNE6H8uQQuVA")}>
+          <img src={simon} alt="" /> <p>MrBeast</p>
+        </div>
+        <div className="side-link" onClick={() => setChannel("UCqwUrj10mAEsqezcItqvwEw")}>
+          <img src={tom} alt="" /> <p>Bhuvan Bam</p>
+        </div>
+        <div className="side-link" onClick={() => setChannel("UC0rtXi6Y3oX8y4qj6mF3Fyg")}>
+          <img src={megan} alt="" /> <p>Ashish</p>
+        </div>
+        <div className="side-link" onClick={() => setChannel("UCY30JRSgfhYXA6i6xX1erWg")}>
+          <img src={cameron} alt="" /> <p>Nas Daily</p>
+        </div>
       </div>
 
     </div>

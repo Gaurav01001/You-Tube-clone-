@@ -93,3 +93,9 @@
 .subscribed-list img {
     width: 22px;
 }
+
+@media (max-width:900px) {
+    .sidebar{
+        display: none;
+    }
+}
